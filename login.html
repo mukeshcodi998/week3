@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function validate(){
+     let pwd1=frm.pwd.value;
+        let pwdlen=pwd1.length;
+        if(pwd1%2==1){
+        alert("password should contain even numbers");
+        return false;           
+        }
+        if(pwdlen>8){
+            alert("password should not exceed 8 digits");
+            return false;
+        }
+        
+    }
+</script>
+<body>
+    <form name="frm" method="POST" action="success.html" onsubmit="return validate()">
+     <center>
+<fieldset align-center>
+    <table align-center>
+        <tr><td align-center>LOgin Form</td></tr>
+        <tr><td>Username Name:</td><td><input type="text" name="username" value="" size="50" required/></td></tr>
+        <tr><td>Password</td><td><input type="password" name="pwd" value="" size="50" required/></td></tr>
+        
+    </table>
+    <input type="submit" value="login" name="submit"/>
+</fieldset>
+     </center>
+</body>
+</html>

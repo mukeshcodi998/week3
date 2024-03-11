@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  href="success.html">
+    <title>Document</title>
+    
+    <style>
+        fieldset{
+        width:500px;
+    }
+    table tr td{
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    </style>
+</head>
+<script>
+    function validate(){
+        let fn=frm.fname.value;
+        for(let x in fn){
+            let ch=fn.charCodeAt(x);
+            if(ch<65||ch>90 && ch<97||ch>122){
+                    alert("invalid firstname");
+                    return false;
+            }
+        }
+        let fn1=frm.lname.value;
+        for(let x in fn1){
+            let ch=fn1.charCodeAt(x);
+            if(ch<65||ch>90 && ch<97||ch>122){
+                    alert("invalid lastname");
+                    return false;
+            }
+        }
+       let phn=frm.phone.value;
+       let len=phn.length;
+       if(len!==10){
+        alert("phone no should be 10 digits");
+        return false;
+       }
+       let red="@";
+       let mailid=frm.mail.value;
+       if(reg.test(mailid)){
+        alert("invalid email");
+        return false;
+        let pwd1=frm.pwd.value;
+        let pwdlen=pwd1.length;
+        if(pwd1%2==1){
+        alert("password should contain even numbers");
+        return false;           
+        }
+        if(pwdlen>8){
+            alert("password should not exceed 8 digits");
+            return false;
+        }
+        
+       }
+
+    }
+</script>
+<body>
+    <center>
+    <form name="frm" method="POST" action="success.html" onsubmit="return validate()">
+    <fieldset align-center>
+        <table align-center>
+    <tr><td>First Name:</td><td><input type="text" name="fname" value="" size="50" required/></td></tr>
+    <tr><td>Last Name:</td><td><input type="text" name="lname" value="" size="50" required/></td></tr>
+    <tr><td>Mobile No:</td><td><input type="text" name="Phone" value="" size="50" required/></td></tr>
+    <tr><td>Mail Id:</td><td><input type="email" name="mail" value="" size="50" required/></td></tr>
+    <tr><td>Gender:</td>
+    <td>
+        Male:<input type="radio" name="Gender" value="male"/> 
+        Female:<input type="radio" name="Gender" value="female"/> 
+          
+     </td>
+    </tr>
+    <tr><td>DOB:</td><td><input type="date" name="dob" value="" size="50" required/></td></tr>
+    <tr><td>Username:</td><td><input type="text" name="uname" value="" size="50" required/></td></tr>
+    <tr><td>Password:</td><td><input type="text" name="password" value="" size="50" required/></td></tr>
+        </table>
+        <input type="submit" value="Register" name="submit"/>
+    </fieldset>
+    </form>
+    <p>copyright cmrit_2024</p>
+    </center>
+</body>
+</html>
